@@ -75,7 +75,8 @@ pub fn start_job_with_ping() -> std::io::Result<()> {
         )),
     }?;
 
-    drop(tempdir);
     daemon_subroutine_handle.join().unwrap();
+
+    drop(tempdir);
     Ok(())
 }
